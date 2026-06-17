@@ -10,6 +10,5 @@ map "$http_user_agent:$args" $block_bad_bot {
     
     ~*Mozlila 1;
 
-    # wp-cron abuse — block direct PHP cron requests from non-browsers
-    # handled separately (see below)
+    
 }
