@@ -17,7 +17,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /home/ubuntu/demo/demo-cicd-2026
+            cd /home/ubuntu/
+            sudo ./deploy.sh
 
             git fetch origin
             git reset --hard origin/main
