@@ -1,0 +1,15 @@
+map "$http_user_agent:$args" $block_bad_bot {
+    default 0;
+
+    # Original: bots hitting filter URLs
+    ~*(bot|crawl|spider).*(attr_|prod_cat|collection|on_sale|in_stock|srsltid) 1;
+
+    # Wget hammering (from your logs)
+    ~*^Wget 1;
+
+    # Fake scanner agent (note the typo "Mozlila" — not "Mozilla")
+    ~*Mozlila 1;
+
+    # wp-cron abuse — block direct PHP cron requests from non-browsers
+    # handled separately (see below)
+}
