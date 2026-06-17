@@ -7,7 +7,7 @@ map "$http_user_agent:$args" $block_bad_bot {
     
     ~*^Wget 1;
 
-    # Fake scanner agent (note the typo "Mozlila" — not "Mozilla")
+    
     ~*Mozlila 1;
 
     # wp-cron abuse — block direct PHP cron requests from non-browsers
